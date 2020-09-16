@@ -1,0 +1,49 @@
+{
+  "name": "battleship-gsw-server",
+  "version": "1.0.0",
+  "description": "Jogo de batalha naval para dois jogadores desenvolvido em Node.Js (ES6) e MongoDB utilizando conceitos de Clean Architecture, Clean Code, Repository Pattern, TDD e DDD",
+  "main": "server.js",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./lib -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/server.js",
+    "dev": "nodemon --exec babel-node ./lib/server.js --inspect",
+    "test": "mocha '**/*.spec.js' --color --require babel-register --require babel-polyfill"
+  },
+  "keywords": [
+    "battleship",
+    "gsw",
+    "node",
+    "tdd",
+    "clean-architecture"
+  ],
+  "author": "Bruno Oliveira",
+  "repository": {
+    "url": "https://github.com/brunooliveira95/battleship-gsw-server"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "sinon": "^7.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  }
+}
